@@ -8,6 +8,10 @@
     "Marty Blood <marty.blood@me>"
   ],
   "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo 'TODO' && exit 1"
+  },
   "dependencies": {
     "express": "4.10.2",
     "body-parser": "1.9.2"
