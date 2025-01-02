@@ -18,7 +18,8 @@ curl -v -X PUT -H 'Content-Type: application/json' \
      'http://localhost:3000/api/users/1002'
 */
 
-var express = require('express'),
+var port = process.env.PORT || '3000',
+    express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     usersMap = {
@@ -34,6 +35,8 @@ var express = require('express'),
         1004
     ],
     nextUserId = 1005;
+
+app.disable('x-powered-by');
 
 function getById(id) {
     return usersMap[Number(id)];
@@ -118,8 +121,6 @@ app.delete('/api/users/:userId', function (req, res) {
     }
 });
 
-server = app.listen(3000, function () {
-    var host = server.address().address,
-        port = server.address().port;
-    console.log('REST services listening at http://%s:%s/api/users', host, port);
+server = app.listen(port, function () {
+    console.log('REST services listening at http://localhost:%s/api/users', port);
 });

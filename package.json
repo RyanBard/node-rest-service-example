@@ -13,7 +13,6 @@
     "test": "echo 'TODO' && exit 1"
   },
   "dependencies": {
-    "express": "4.16.0",
-    "body-parser": "1.18.2"
+    "express": "4.21.2"
   }
 }
